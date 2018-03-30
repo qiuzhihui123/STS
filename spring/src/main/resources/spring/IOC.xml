@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+			
+			
+	
+	<bean id="studentDao" class="com.qiuhui.dao.StudentDao"/>
+	
+	<bean id="studentService" class="com.qiuhui.service.StudentService" autowire="constructor"/>
+	
+	<bean id="otherService" class="com.qiuhui.service.OtherService">
+		<property name="id" value="12"/>
+		<property name="name" value="邱志辉"/>
+		<property name="score" value="10.55"/>
+		
+		<property name="nameList">
+			<list>
+				<value>小狗</value>
+				<value>小猫</value>
+			</list>		
+		</property>	
+				
+		<property name="set">
+			<set>
+				<value>55</value>
+				<value>66</value>
+			</set>
+		</property>	
+		
+		<property name="map">
+			<map>
+				<entry key="a" value-ref="studentDao"/>
+				<entry key="b" value-ref="studentDao"/>	
+			</map>
+		</property>
+		<property name="properties">
+			<props>
+				<prop key="a">爱爱爱</prop>
+				<prop key="b">帮不帮</prop>
+			</props>
+		</property>
+		
+	</bean>
+	
+	
+ 	<!-- <bean id="studentService" class="com.qiuhui.service.StudentService">
+	
+	<constructor-arg type="com.qiuhui.dao.StudentDao" ref="studentDao"/>
+	
+	<constructor-arg index="0" ref="studentDao"/>
+		
+		<constructor-arg name="studentDao" ref="studentDao"/>
+			
+	</bean> -->
+	
+	
+<!--  	<bean id="studentService" class="com.qiuhui.service.StudentService">
+		<property name="studentDao">
+			<bean class="com.qiuhui.dao.StudentDao"/>
+		</property>	
+	</bean> -->
+	
+	
+	
+<!-- 	<bean id="studentService" class="com.qiuhui.service.StudentService">
+		<property name="studentDao">
+			<ref bean="studentDao"/>
+		</property>	
+	</bean> -->
+	
+	
+<!-- 	<bean id="studentService" class="com.qiuhui.service.StudentService">
+		<property name="studentDao" ref="studentDao"/>
+	
+	</bean> -->
+
+</beans>
