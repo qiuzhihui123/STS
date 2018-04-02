@@ -13,5 +13,15 @@ public class OtherServiceTestCase {
 		OtherService otherService = (OtherService)applicationContext.getBean("otherService");
 		otherService.show();
 	}
+	
+	@Test
+	public void again(){
+		
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring/applicationContext.xml");
+		
+		OtherService otherService = (OtherService)applicationContext.getBean("otherService");
+		
+		otherService.show();
+	}
 
 }

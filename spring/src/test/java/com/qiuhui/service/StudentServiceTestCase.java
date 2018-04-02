@@ -17,6 +17,15 @@ public class StudentServiceTestCase {
 	
 	}
 	
+	@Test
+	public void again(){
+		ApplicationContext applicationContext = new  ClassPathXmlApplicationContext("spring/applicationContext.xml");
+		StudentService studentService = (StudentService)applicationContext.getBean("studentService");
+		
+		studentService.save();
+		
+	}
+	
 	
 	
 }

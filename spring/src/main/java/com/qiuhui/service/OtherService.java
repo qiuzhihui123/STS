@@ -1,6 +1,7 @@
 package com.qiuhui.service;
 
 import java.util.Enumeration;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
@@ -18,7 +19,46 @@ public class OtherService {
 	private Map<String,StudentDao> map;
 	private Properties properties;
 	
-	public void show() {
+	public void show(){
+		System.out.println(id);
+		System.out.println(name);
+		System.out.println(score);
+		
+		for(String str : nameList) {
+			System.out.println(str);
+			
+		}
+		
+		Iterator<Integer> iterator = set.iterator();
+		
+		while(iterator.hasNext()) {
+			int num = iterator.next();
+			System.out.println(num);
+			
+		}
+		
+		for(Map.Entry<String,StudentDao> entry : map.entrySet()) {
+			System.out.println(entry.getKey()+"--->"+entry.getValue());
+			
+		}
+		
+		Enumeration enumeration = properties.keys();
+		
+		while(enumeration.hasMoreElements()){
+			Object key = enumeration.nextElement();
+			Object value = properties.get(key);
+			
+			System.out.println(key +"--->"+ value);
+		}
+		
+		
+		
+		
+	}
+	
+	
+	
+	/*public void show() {
 		System.out.println(id);
 		System.out.println(name);
 		System.out.println(score);
@@ -45,11 +85,13 @@ public class OtherService {
 			System.out.println(key +"---->"+value);
 		}
 		
+		}*/
 		
 		
 		
 		
-	}
+		
+	
 	
 	
 	public void setId(Integer id) {

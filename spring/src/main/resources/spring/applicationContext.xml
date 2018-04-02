@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<!-- <bean id="" class="" lazy-init="" scope="prototype" init-method="" destroy-method=""/>
+ -->
+ 
+	<bean id="studentDao" class="com.qiuhui.dao.StudentDao"/>
+	
+	
+	<bean id="studentService" class="com.qiuhui.service.StudentService">
+		
+		<constructor-arg type="String" value="哈哈"/>
+		<constructor-arg type="com.qiuhui.dao.StudentDao" ref="studentDao"/>
+		
+		
+		<!-- <constructor-arg index="0" value="studentDao"/>
+		<constructor-arg index="1" ref="studentDao"/> -->
+
+		<!-- <constructor-arg name="studentDao" ref="studentDao"/> -->
+
+	</bean>	
+	
+	<bean id="otherService" class="com.qiuhui.service.OtherService">
+		<property name="id" value="444"/>
+		<property name="name" value="小傻瓜"/>
+		<property name="score" value="1.111"/>
+		
+		<property name="nameList">
+			<list>
+				<value>哈哈哈</value>
+				<value>嘿嘿嘿</value>
+			</list>
+		</property>
+		
+		<property name="set">
+			<set>
+				<value>123</value>
+				<value>312</value>
+			</set>
+		</property>
+		
+		<property name="map">
+			<map>
+				<entry key="k1" value-ref="studentDao"/>
+				<entry key="k2" value-ref="studentDao"/>
+			</map>
+		</property>
+		
+		<property name="properties">
+			<props>
+				<prop key="s1">小傻瓜</prop>
+				<prop key="s2">大傻瓜</prop>
+			</props>
+		</property>
+		
+				
+	</bean>
+	
+	
+	
+	<!-- <bean id="studentService" class="com.qiuhui.service.StudentService">
+		
+		
+		<property name="studentDao">
+			<bean class="com.qiuhui.dao.StudentDao"/>
+		</property>
+		
+		<property name="studentDao">
+			<ref bean="studentDao"/>
+		</property>
+		
+		 <property name="studentDao" ref="studentDao"/>
+		
+	</bean> -->
+	
+	
+
+<!-- 	<bean id="studentService" class="com.qiuhui.service.StudentService" p:studentDao-ref="studentDao"/> -->
+</beans>

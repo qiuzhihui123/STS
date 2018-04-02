@@ -4,13 +4,21 @@ import com.qiuhui.dao.StudentDao;
 
 public class StudentService {
 
+	
+	
 	private StudentDao studentDao;
+	private String name;
 	
 	
 	
+	public StudentService(){
+		
+	}
 	
-	public StudentService(StudentDao studentDao){
-		System.out.println("构造方法");
+	
+	public StudentService(String name,StudentDao studentDao){
+		
+		System.out.println("构造方法,我的名字是:" + name );
 		this.studentDao = studentDao;
 	}
 	
@@ -20,6 +28,7 @@ public class StudentService {
 	}
 	
 	public void setStudentDao(StudentDao studentDao){
+		
 		this.studentDao = studentDao;
 		System.out.println("set方法");
 	}
