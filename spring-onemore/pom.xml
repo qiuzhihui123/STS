@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.qiuhui</groupId>
+  <artifactId>spring-onemore</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  
+  <properties>
+  		<spring-version>4.3.14.RELEASE</spring-version>
+  		<junit-version>4.12</junit-version>
+  		<inject-version>1</inject-version>
+  </properties>
+  
+  
+  <dependencies>
+  <!--inject规范  -->
+		<dependency>
+  		<groupId>javax.inject</groupId>
+  		<artifactId>javax.inject</artifactId>
+  		<version>${inject-version}</version>
+  	</dependency>
+  <!--inject规范  -->
+  
+  <!-- spring-context -->
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-context</artifactId>
+  		<version>${spring-version}</version>
+  	</dependency>
+  	
+  	<!--spring-aop相关  -->
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-aop</artifactId>
+  		<version>${spring-version}</version>
+  	</dependency>
+  	
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-aspects</artifactId>
+  		<version>${spring-version}</version>
+  	</dependency>
+  	<!--spring-aop相关  -->
+  	
+  	<!--spring test 相关  -->
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-test</artifactId>
+  		<version>${spring-version}</version>
+  	</dependency>	
+  	<!--spring test 相关  -->
+  	
+  	<!-- junit相关 -->
+		<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>${junit-version}</version>
+  	</dependency>
+  	<!-- junit相关 -->
+  	
+  	
+  </dependencies>
+  
+  
+  
+</project>

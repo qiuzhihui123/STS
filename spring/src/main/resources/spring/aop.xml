@@ -13,15 +13,12 @@
 <aop:config>
 	<aop:aspect ref="aopAdvice">
 		<aop:pointcut expression="execution(* com.qiuhui.proxy..*.*(..))" id="myPointcut"/>
-	
 		<aop:before method="beforeAdvice" pointcut-ref="myPointcut" />
 		<aop:after-returning method="afterAdvice" pointcut-ref="myPointcut" returning="result"/>
 		<aop:after-throwing method="exceptionAdvice" pointcut-ref="myPointcut" throwing="e"/>
 		<!-- <aop:after method="finallyAdvice" pointcut-ref="myPointcut" /> -->
-	
 	</aop:aspect>
 </aop:config>
-
 
 
 </beans>
