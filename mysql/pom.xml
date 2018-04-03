@@ -1,48 +1,42 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.qiuhui</groupId>
-  <artifactId>spring-onemore</artifactId>
+  <artifactId>mysql</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
   
   <properties>
-  		<spring-version>4.3.14.RELEASE</spring-version>
-  		<junit-version>4.12</junit-version>
-  		<inject-version>1</inject-version>
-  		<dbutils-version>1.6</dbutils-version>
+  	<junit-version>4.12</junit-version>
+  	<spring-version>4.3.14.RELEASE</spring-version>
+  	<jdbc-version></jdbc-version>
+  	<datasource-version></datasource-version>
+  	<inject-version>1</inject-version>
   </properties>
   
-  
   <dependencies>
-  <!--inject规范  -->
-		<dependency>
+  
+  <!--inject相关  -->
+	<dependency>
   		<groupId>javax.inject</groupId>
   		<artifactId>javax.inject</artifactId>
   		<version>${inject-version}</version>
   	</dependency>
-  <!--inject规范  -->
+  <!--inject相关  -->
   
-  <!-- spring-context -->
+  <!-- junit相关 -->
+	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>${junit-version}</version>
+  	</dependency>
+  	<!-- junit相关 -->
+  
+  	<!-- spring-context -->
   	<dependency>
   		<groupId>org.springframework</groupId>
   		<artifactId>spring-context</artifactId>
   		<version>${spring-version}</version>
   	</dependency>
   	<!-- spring-context -->
-  	
-  	<!--spring-aop相关  -->
-  	<dependency>
-  		<groupId>org.springframework</groupId>
-  		<artifactId>spring-aop</artifactId>
-  		<version>${spring-version}</version>
-  	</dependency>
-  	
-  	<dependency>
-  		<groupId>org.springframework</groupId>
-  		<artifactId>spring-aspects</artifactId>
-  		<version>${spring-version}</version>
-  	</dependency>
-  	<!--spring-aop相关  -->
   	
   	<!--spring test 相关  -->
   	<dependency>
@@ -52,13 +46,19 @@
   	</dependency>	
   	<!--spring test 相关  -->
   	
-  	<!-- junit相关 -->
-		<dependency>
-  		<groupId>junit</groupId>
-  		<artifactId>junit</artifactId>
-  		<version>${junit-version}</version>
-  	</dependency>
-  	<!-- junit相关 -->
+  	<!-- spring aop相关 -->
+	<dependency>
+ 		<groupId>org.springframework</groupId>
+ 		<artifactId>spring-aop</artifactId>
+ 		<version>${spring-version}</version>
+  	</dependency>	
+  	
+  	<dependency>
+ 		<groupId>org.springframework</groupId>
+ 		<artifactId>spring-aspects</artifactId>
+ 		<version>${spring-version}</version>
+  	</dependency>  	
+  	<!-- spring aop相关 -->
   	
   	<!--数据库jdbc jar  -->
 		<dependency>
@@ -83,15 +83,9 @@
   		<version>${spring-version}</version>
   	</dependency>	
   	<!--spring jdbc 相关  -->
-  	
-  	<!--dbutils  -->
-		<dependency>
-		    <groupId>commons-dbutils</groupId>
-		    <artifactId>commons-dbutils</artifactId>
-		    <version>${dbutils-version}</version>
-		</dependency>  	
-  	<!--dbutils  -->
+  		
   </dependencies>
+  
   
   
   

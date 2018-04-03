@@ -1,6 +1,7 @@
 package com.qiuhui.aop;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 
 public class MyAdvice {
 	
@@ -23,4 +24,5 @@ public class MyAdvice {
 		System.out.println("哈哈，我是最终顾问");
 		
 	}
+	
 }
