@@ -24,7 +24,7 @@ public class DbHelp {
 	public static<T> T executeQuery(String sql,ResultSetHandler<T> rsh,Object...params) throws SQLException {
 		
 		return runner.query(sql,rsh,params);
-		new BeanListHandler<>
+		
 	}
 	
 	

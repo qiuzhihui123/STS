@@ -1,9 +1,9 @@
 package com.qiuhui;
 
-import javax.inject.Inject;
 import javax.sql.DataSource;
 
 import org.apache.commons.dbcp2.BasicDataSource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -21,22 +21,22 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @PropertySource("classpath:config.properties")
 public class Application {
 	
-	@Inject
+	@Autowired
 	private Environment environment;
-
+	
 	@Bean
 	public BasicDataSource dataSource() {
-		BasicDataSource basicDataSource = new BasicDataSource();
-		basicDataSource.setDriverClassName(environment.getProperty("jdbc.driver"));
-		basicDataSource.setUrl(environment.getProperty("jdbc.url"));
-		basicDataSource.setUsername(environment.getProperty("jdbc.username"));
-		basicDataSource.setPassword(environment.getProperty("jdbc.password"));
+		BasicDataSource dataSource = new BasicDataSource();
+		dataSource.setDriverClassName(environment.getProperty("jdbc.driver"));
+		dataSource.setUrl(environment.getProperty("jdbc.url"));
+		dataSource.setUsername(environment.getProperty("jdbc.username"));
+		dataSource.setPassword(environment.getProperty("jdbc.password"));
 		
-		basicDataSource.setInitialSize(Integer.parseInt(environment.getProperty("jdbc.init")));
-		basicDataSource.setMaxTotal(Integer.parseInt(environment.getProperty("jdbc.max")));
-		basicDataSource.setMaxWaitMillis(Integer.parseInt(environment.getProperty("jdbc.maxwait")));
+		dataSource.setInitialSize(Integer.parseInt(environment.getProperty("jdbc.init")));
+		dataSource.setMaxTotal(Integer.parseInt(environment.getProperty("jdbc.max")));
+		dataSource.setMaxWaitMillis(Integer.parseInt(environment.getProperty("jdbc.maxwait")));
 		
-		return basicDataSource;
+		return dataSource;
 	}
 	
 	@Bean
@@ -48,12 +48,12 @@ public class Application {
 		
 	}
 	
+	
 	@Bean
 	public DataSourceTransactionManager transactionManager(DataSource dataSource) {
 		DataSourceTransactionManager transactionManager = new DataSourceTransactionManager();
 		transactionManager.setDataSource(dataSource);
 		return transactionManager;
 	}
-	
-	
+
 }
