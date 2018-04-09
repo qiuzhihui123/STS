@@ -30,6 +30,11 @@
 	</tr>
 
 	</c:forEach>
+	
+	<br />
+	<br />
+	<img src="/static/img/icon.png" >	
+	
 </tbody>
 
 </table>
